@@ -45,6 +45,7 @@ System.register(['angular2/core', 'angular2/router', '../index'], function(expor
                                 _this.products = clients[0].productos.map(_this.parseSaldo);
                                 _this.b = 1;
                                 _this.nameClient = clients[0].nombre_completo;
+                                console.log("nombre: " + _this.nameClient);
                             }
                         }, function (error) { return _this.errorMessage = error; });
                     }

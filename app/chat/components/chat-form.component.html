@@ -1,3 +1,52 @@
-<chat-form>
-  	<h2>Productos de un Cliente</h2>
-</chat-form>
+<mbk-product>
+
+  <div *ngIf="!chat">
+    <h2>Clientes</h2>
+
+    <table border="2px">
+      <tr color="2px">
+        <td><b>Nombre</b></td>
+        <td><b>Tipo documento</b></td>
+        <td><b>Número documento</b></td>
+        <td><b>Correo electrónico</b></td>
+      </tr>
+      <tr color="2px" *ngFor="#client of clients" (click)="openChat(client.correo)">
+        <td>{{ client.nombre_completo }}</td>
+        <td>{{ client.tipo_doc }}</td>
+        <td>{{ client.documento }}</td>
+        <td>{{ client.correo }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div *ngIf="chat">
+    <h2>Mensajes</h2>
+
+    <button (click)="closeChat()">Cerrar</button>
+
+    <table border="2px">
+      <tr color="2px">
+        <td><b>De</b></td>
+        <td><b>Para</b></td>
+        <td><b>Fecha</b></td>
+        <td><b>Estado</b></td>
+        <td><b>Mensaje</b></td>
+      </tr>
+      <tr color="2px" *ngFor="#message of messages">
+        <td>{{ message.de }}</td>
+        <td>{{ message.para }}</td>
+        <td>{{ message.fecha }}</td>
+        <td>{{ message.estado }}</td>
+        <td>{{ message.mensaje }}</td>
+      </tr>
+    </table>
+
+    <form>
+      <input type="text" name="message" [(ngModel)]="message" />
+      <button (click)="sendMessage()">Enviar mensaje</button>
+    </form>
+  </div>
+
+  <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+
+</mbk-product>

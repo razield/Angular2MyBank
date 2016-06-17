@@ -1,1 +1,1 @@
-export { ChatComponent }  from './components/chat-form.component';
+export { ChatComponent }  from './components/chat.component';

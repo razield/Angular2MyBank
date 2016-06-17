@@ -38,6 +38,7 @@ export class ProductListComponent {
                 this.products = clients[0].productos.map(this.parseSaldo);
                 this.b = 1;
                 this.nameClient = clients[0].nombre_completo;
+                console.log("nombre: " + this.nameClient);
                 }
             },
             error => this.errorMessage = <any>error);
