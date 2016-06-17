@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Lato');
+
+.text-success {
+    color: #5cb85c;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: Lato;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.4;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.popover {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+body{
+    background-image: url("resources/inicio.jpg");
+    background-size: cover;
+    font-family: Lato;
+    font-size: 14px;
+}
+html, body {
+    height: 100vh;
+    overflow-y: hidden;
+}
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.vcenter {
+    transform: translateY(50%);
+}
+.vc{
+    vertical-align: middle;
+}
+.vfill {
+    height: 100vh;
+}
+.points {
+    background-image: url("resources/puntos.png");
+}
+.on-top {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+
+.ng-valid[required] {
+    border-radius: 4px;
+    background-color: white;
+    background-image: url('resources/ok.png');
+    background-position: 98% 10px;
+    background-repeat: no-repeat;
+    border-bottom: 2px solid green;
+
+}
+.ng-invalid {
+    border-radius: 4px;
+    background-color: white;
+    background-image: url('resources/alert.png');
+    background-position: 98% 10px;
+    background-repeat: no-repeat;
+    border-bottom: 2px solid red;
+
+}

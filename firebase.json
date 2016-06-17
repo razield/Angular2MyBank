@@ -1,0 +1,17 @@
+{
+    "firebase": "MYBANK",
+    "public": ".",
+    "ignore": [
+        "firebase.json",
+        "**/.*",
+        "node_modules/**",
+        "tsconfig.json",
+        "package.json",
+        "README.md"
+    ],
+    "redirects": [{
+        "source"     : "/",
+        "destination": "https://torrid-heat-7366.firebaseio.com/",
+        "type"       : 301
+    }]
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!--    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
+<!--    <link href="https://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css"> -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="https://code.angularjs.org/2.0.0-beta.15/angular2.dev.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <link rel="stylesheet" href="login-form.component.css" media="screen" title="no title" charset="utf-8">
+    <title>MBK Bank - Ejecutivos</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row row-eq-height vcenter">
+            <div class="col-md-3 points"></div>
+            <div class="col-md-3">
+                <h1 class="text-center">
+                      <i class="fa fa-diamond fa-fw text-success"></i>MBK</h1>
+                <hr width="50%">
+                <form [ngFormModel]="userForm" (submit)="loggingInUser(credentials.email, credentials.password)">
+                    <label class="control-label" for="email">CORREO ELECTRÓNICO</label>
+                    <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></div>
+                            <input ngControl="email" #email="ngForm" class="form-control" id="email" aria-describedby="inputGroupSuccess1Status" placeholder="Ej: superejecutivo@mbk.com" type="email" data-error="Correo invalido" required [(ngModel)]="credentials.email" />
+                            <div class="help-block with-errors"></div>
+                    </div>
+                    
+                    <label class="control-label" for="password">CONTRASEÑA</label>
+                    <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-key fa-fw"></i></div>
+                            <input ngControl="password" #password="ngForm"class="form-control" data-minlength="5" id="password" aria-describedby="inputGroupSuccess2Status" placeholder="Ej: ########" type="password" required [(ngModel)]="credentials.password">
+                            <div class="help-block with-errors"></div>
+                    </div>
+                
+                    <button type="submit" class="btn btn-block btn-success" [disabled]="!userForm.valid">Iniciar Sesión</button>
+                </form>
+                <!--<form role="form">
+                    <div class="form-group">
+                        <label class="control-label" for="email">CORREO ELECTRÓNICO</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></div>
+                            <input class="form-control" id="email" aria-describedby="inputGroupSuccess1Status" placeholder="Ej: superejecutivo@mbk.com" type="email" data-error="Correo invalido" required [(ngModel)]="credentials.email">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="password">CONTRASEÑA</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-key fa-fw"></i></div>
+                            <input class="form-control" data-minlength="5" id="password" aria-describedby="inputGroupSuccess2Status" placeholder="Ej: ########" type="password" required [(ngModel)]="credentials.password">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-success" (click)="loggingInUser(credentials.email, credentials.password)">Iniciar Sesión</button>
+                </form>-->
+            </div>
+            <div class="col-md-6 points"></div>
+        </div>
+    </div>
+</body>
+
+</html>
